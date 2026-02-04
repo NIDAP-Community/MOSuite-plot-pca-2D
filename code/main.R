@@ -36,7 +36,6 @@ parser$add_argument("--label_offset_x_", type="double", default=2, help="X-axis 
 parser$add_argument("--label_offset_y_", type="double", default=2, help="Y-axis offset for labels")
 parser$add_argument("--interactive_plots", type="logical", default=FALSE, help="Whether to create interactive plots")
 parser$add_argument("--color_values", type="character", default="#5954d6,#e1562c,#b80058,#00c6f8,#d163e6,#00a76c,#ff9287,#008cf9,#006e00,#796880,#FFA500,#878500", help="Comma-separated color values")
-parser$add_argument("--plot_title", type="character", default="PCA 2D", help="Title for the plot")
 
 args <- parser$parse_args()
 
@@ -104,6 +103,5 @@ plot_pca_2d(
     label_offset_x_ = args$label_offset_x_,
     label_offset_y_ = args$label_offset_y_,
     interactive_plots = args$interactive_plots,
-    color_values = parse_optional_vector(args$color_values),
-    plot_title = args$plot_title
+    color_values = parse_optional_vector(args$color_values)
 )

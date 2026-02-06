@@ -1,7 +1,8 @@
 # Code Ocean capsule - MOSuite - plot 2D PCA
 
-## development version
+## v2.0
 
+- Use MOSuite v0.3.0
 - Standardize app panel parameters across MOSuite capsules.
 
 ## v1.0

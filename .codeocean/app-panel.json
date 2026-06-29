@@ -119,9 +119,15 @@
 			"name": "Legend position",
 			"param_name": "legend_position",
 			"description": "Position of the legend",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "top"
+			"default_value": "top",
+			"extra_data": [
+				"top",
+				"bottom",
+				"left",
+				"right"
+			]
 		},
 		{
 			"id": "point_size_id",

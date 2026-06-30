@@ -145,9 +145,13 @@
 			"name": "Add labels",
 			"param_name": "add_label",
 			"description": "Whether to add labels to points",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "TRUE"
+			"default_value": "TRUE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "label_font_size_id",
@@ -185,9 +189,13 @@
 			"name": "Interactive plots",
 			"param_name": "interactive_plots",
 			"description": "Whether to create interactive plots",
-			"type": "text",
+			"type": "list",
 			"value_type": "string",
-			"default_value": "FALSE"
+			"default_value": "FALSE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "color_values_id",

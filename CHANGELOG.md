@@ -2,7 +2,7 @@
 
 ## Development version
 
-- Improved the Code Ocean parameter UI for the plot pca 2D capsule (#1).
+- Improved the Code Ocean parameter UI for the plot pca 2D capsule (#1, @phoman14).
 
 ## v2.0
 

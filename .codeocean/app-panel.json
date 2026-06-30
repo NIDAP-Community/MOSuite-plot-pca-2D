@@ -13,12 +13,6 @@
 	],
 	"categories": [
 		{
-			"id": "7Rr6IxOMDucKMImp",
-			"name": "Input Data Parameters",
-			"description": "Options for defining input data",
-			"icon": "\ud83d\udcc1"
-		},
-		{
 			"id": "EzTg1ivlFDHEy9PI",
 			"name": "Basic",
 			"icon": "\ud83d\udcc2"
@@ -28,6 +22,12 @@
 			"name": "Visualization",
 			"description": "Visualization and plotting options",
 			"icon": "\ud83d\udcca"
+		},
+		{
+			"id": "7Rr6IxOMDucKMImp",
+			"name": "Advanced",
+			"description": "Advanced input data options",
+			"icon": "\ud83d\udcc1"
 		}
 	],
 	"parameters": [
@@ -49,7 +49,7 @@
 		},
 		{
 			"id": "sub_count_type_id",
-			"category": "FvI4Z2eb9sjL47Jt",
+			"category": "7Rr6IxOMDucKMImp",
 			"name": "Sub count type",
 			"param_name": "sub_count_type",
 			"description": "Sub count type if count_type is a list",
@@ -58,7 +58,7 @@
 		},
 		{
 			"id": "feature_id_colname_id",
-			"category": "FvI4Z2eb9sjL47Jt",
+			"category": "EzTg1ivlFDHEy9PI",
 			"name": "Feature ID column name",
 			"param_name": "feature_id_colname",
 			"description": "Column name for feature IDs",
@@ -67,7 +67,7 @@
 		},
 		{
 			"id": "sample_id_colname_id",
-			"category": "FvI4Z2eb9sjL47Jt",
+			"category": "EzTg1ivlFDHEy9PI",
 			"name": "Sample ID column name",
 			"param_name": "sample_id_colname",
 			"description": "Column name for sample IDs",
@@ -105,7 +105,7 @@
 		},
 		{
 			"id": "principal_components_id",
-			"category": "EzTg1ivlFDHEy9PI",
+			"category": "7Rr6IxOMDucKMImp",
 			"name": "Principal components",
 			"param_name": "principal_components",
 			"description": "Principal components to plot (comma-separated, e.g., 1,2)",

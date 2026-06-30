@@ -45,7 +45,10 @@ test_that("2D PCA capsule keeps expected PCA parameter contract", {
     info = "2D PCA main.R should expose shared PCA args plus 2D-specific controls"
   )
   expect_match(paste(main_lines, collapse = "\n"), "plot_pca_2d\\(")
-  expect_equal(extract_panel_default(panel_lines, "principal_components"), "1,2")
+  expect_equal(
+    extract_panel_default(panel_lines, "principal_components"),
+    "1,2"
+  )
   expect_equal(extract_panel_default(panel_lines, "add_label"), "TRUE")
   expect_equal(extract_panel_default(panel_lines, "interactive_plots"), "FALSE")
 })

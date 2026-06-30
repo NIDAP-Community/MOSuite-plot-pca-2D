@@ -48,20 +48,31 @@
 			]
 		},
 		{
+			"id": "group_colname_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Group column name",
+			"param_name": "group_colname",
+			"description": "Column name for sample groups",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "Group"
+		},
+		{
+			"id": "label_colname_id",
+			"category": "EzTg1ivlFDHEy9PI",
+			"name": "Label column name",
+			"param_name": "label_colname",
+			"description": "Column name for sample labels",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "Label"
+		},
+		{
 			"id": "sub_count_type_id",
 			"category": "7Rr6IxOMDucKMImp",
 			"name": "Sub count type",
 			"param_name": "sub_count_type",
 			"description": "Sub count type if count_type is a list",
-			"type": "text",
-			"value_type": "string"
-		},
-		{
-			"id": "feature_id_colname_id",
-			"category": "EzTg1ivlFDHEy9PI",
-			"name": "Feature ID column name",
-			"param_name": "feature_id_colname",
-			"description": "Column name for feature IDs",
 			"type": "text",
 			"value_type": "string"
 		},
@@ -84,26 +95,6 @@
 			"value_type": "string"
 		},
 		{
-			"id": "group_colname_id",
-			"category": "7Rr6IxOMDucKMImp",
-			"name": "Group column name",
-			"param_name": "group_colname",
-			"description": "Column name for sample groups",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "Group"
-		},
-		{
-			"id": "label_colname_id",
-			"category": "7Rr6IxOMDucKMImp",
-			"name": "Label column name",
-			"param_name": "label_colname",
-			"description": "Column name for sample labels",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "Label"
-		},
-		{
 			"id": "principal_components_id",
 			"category": "7Rr6IxOMDucKMImp",
 			"name": "Principal components",
@@ -112,6 +103,15 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "1,2"
+		},
+		{
+			"id": "feature_id_colname_id",
+			"category": "7Rr6IxOMDucKMImp",
+			"name": "Feature ID column name",
+			"param_name": "feature_id_colname",
+			"description": "Column name for feature IDs",
+			"type": "text",
+			"value_type": "string"
 		},
 		{
 			"id": "legend_position_id",

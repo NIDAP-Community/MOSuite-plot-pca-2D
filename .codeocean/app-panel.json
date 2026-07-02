@@ -137,7 +137,7 @@
 			"description": "Size of points in plot",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "1"
+			"default_value": "3"
 		},
 		{
 			"id": "add_label_id",

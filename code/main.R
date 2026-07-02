@@ -65,7 +65,7 @@ parser$add_argument(
 parser$add_argument(
   "--point_size",
   type = "double",
-  default = 1,
+  default = 3,
   help = "Size of points in plot"
 )
 parser$add_argument(
@@ -102,7 +102,7 @@ parser$add_argument(
   "--color_values",
   type = "character",
   default = "#5954d6,#e1562c,#b80058,#00c6f8,#d163e6,#00a76c,#ff9287,#008cf9,#006e00,#796880,#FFA500,#878500",
-  help = "Comma-separated group colors. Defaults to the MOSuite palette; supplied colors are used first and extra group colors are generated when needed."
+  help = "Comma-separated group colors. Defaults to the MOSuite palette. Extra group colors are generated when needed."
 )
 
 args <- parser$parse_args()

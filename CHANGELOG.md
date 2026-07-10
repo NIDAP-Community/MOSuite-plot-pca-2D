@@ -1,5 +1,7 @@
 # Code Ocean capsule - MOSuite - plot 2D PCA
 
+- Use MOSuite v0.3.2. (#3, @kelly-sovacool)
+
 ## v2.0
 
 - Use MOSuite v0.3.0

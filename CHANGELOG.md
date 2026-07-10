@@ -1,5 +1,10 @@
 # Code Ocean capsule - MOSuite - plot 2D PCA
 
+## Development version
+
+- Align the PCA color defaults with MOSuite package defaults (#2, @phoman14).
+- Document that color palettes fall back to random colors only when too few colors are provided (#2, @phoman14).
+- Improved the Code Ocean parameter UI for the plot pca 2D capsule (#1, @phoman14).
 - Use MOSuite v0.3.2. (#3, @kelly-sovacool)
 
 ## v2.0

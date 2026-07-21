@@ -33,7 +33,6 @@ test_that("2D PCA capsule keeps expected PCA parameter contract", {
   )
   two_dimensional_args <- c(
     "legend_position",
-    "add_label",
     "label_offset_x_",
     "label_offset_y_",
     "interactive_plots"
@@ -49,7 +48,7 @@ test_that("2D PCA capsule keeps expected PCA parameter contract", {
     extract_panel_default(panel_lines, "principal_components"),
     "1,2"
   )
-  expect_equal(extract_panel_default(panel_lines, "add_label"), "TRUE")
+  expect_equal(extract_panel_default(panel_lines, "label_colname"), "Label")
   expect_equal(extract_panel_default(panel_lines, "interactive_plots"), "FALSE")
 })
 

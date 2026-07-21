@@ -69,12 +69,6 @@ parser$add_argument(
   help = "Size of points in plot"
 )
 parser$add_argument(
-  "--add_label",
-  type = "logical",
-  default = TRUE,
-  help = "Whether to add labels to points"
-)
-parser$add_argument(
   "--label_font_size",
   type = "double",
   default = 3,
@@ -125,7 +119,6 @@ plot_pca_2d(
   label_colname = args$label_colname,
   legend_position = args$legend_position,
   point_size = args$point_size,
-  add_label = args$add_label,
   label_font_size = args$label_font_size,
   label_offset_x_ = args$label_offset_x_,
   label_offset_y_ = args$label_offset_y_,

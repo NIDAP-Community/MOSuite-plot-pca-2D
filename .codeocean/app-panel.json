@@ -142,20 +142,6 @@
 			"default_value": "5"
 		},
 		{
-			"id": "add_label_id",
-			"category": "FvI4Z2eb9sjL47Jt",
-			"name": "Add labels",
-			"param_name": "add_label",
-			"description": "Whether to add labels to points",
-			"type": "list",
-			"value_type": "string",
-			"default_value": "TRUE",
-			"extra_data": [
-				"TRUE",
-				"FALSE"
-			]
-		},
-		{
 			"id": "label_font_size_id",
 			"category": "FvI4Z2eb9sjL47Jt",
 			"name": "Label font size",

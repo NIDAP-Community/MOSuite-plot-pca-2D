@@ -28,7 +28,9 @@ test_that("2D PCA capsule keeps expected PCA parameter contract", {
     "label_colname",
     "principal_components",
     "point_size",
+    "legend_font_size",
     "label_font_size",
+    "log_transform",
     "color_values"
   )
   two_dimensional_args <- c(
@@ -49,6 +51,8 @@ test_that("2D PCA capsule keeps expected PCA parameter contract", {
     "1,2"
   )
   expect_equal(extract_panel_default(panel_lines, "label_colname"), "Label")
+  expect_true(is.na(extract_panel_default(panel_lines, "legend_font_size")))
+  expect_equal(extract_panel_default(panel_lines, "log_transform"), "FALSE")
   expect_equal(extract_panel_default(panel_lines, "interactive_plots"), "FALSE")
 })
 

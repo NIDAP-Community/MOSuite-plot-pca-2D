@@ -132,6 +132,15 @@
 			]
 		},
 		{
+			"id": "legend_font_size_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Legend font size",
+			"param_name": "legend_font_size",
+			"description": "Font size for legend text. Leave blank to scale automatically.",
+			"type": "text",
+			"value_type": "string"
+		},
+		{
 			"id": "point_size_id",
 			"category": "FvI4Z2eb9sjL47Jt",
 			"name": "Point size",
@@ -170,6 +179,20 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": "2"
+		},
+		{
+			"id": "log_transform_id",
+			"category": "7Rr6IxOMDucKMImp",
+			"name": "Log transform counts",
+			"param_name": "log_transform",
+			"description": "Log-transform counts before PCA",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "FALSE",
+			"extra_data": [
+				"TRUE",
+				"FALSE"
+			]
 		},
 		{
 			"id": "interactive_plots_id",

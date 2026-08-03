@@ -63,16 +63,16 @@ parser$add_argument(
   help = "Position of the legend"
 )
 parser$add_argument(
+  "--legend_font_size",
+  type = "double",
+  default = NULL,
+  help = "Font size for legend text"
+)
+parser$add_argument(
   "--point_size",
   type = "double",
   default = 3,
   help = "Size of points in plot"
-)
-parser$add_argument(
-  "--add_label",
-  type = "logical",
-  default = TRUE,
-  help = "Whether to add labels to points"
 )
 parser$add_argument(
   "--label_font_size",
@@ -91,6 +91,12 @@ parser$add_argument(
   type = "double",
   default = 2,
   help = "Y-axis offset for labels"
+)
+parser$add_argument(
+  "--log_transform",
+  type = "logical",
+  default = FALSE,
+  help = "Log-transform counts before PCA"
 )
 parser$add_argument(
   "--interactive_plots",
@@ -124,11 +130,12 @@ plot_pca_2d(
   group_colname = args$group_colname,
   label_colname = args$label_colname,
   legend_position = args$legend_position,
+  legend_font_size = args$legend_font_size,
   point_size = args$point_size,
-  add_label = args$add_label,
   label_font_size = args$label_font_size,
   label_offset_x_ = args$label_offset_x_,
   label_offset_y_ = args$label_offset_y_,
+  log_transform = args$log_transform,
   interactive_plots = args$interactive_plots,
   color_values = parse_optional_vector(args$color_values)
 )

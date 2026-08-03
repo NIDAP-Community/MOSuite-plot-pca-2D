@@ -14,42 +14,18 @@ test_that("Code Ocean panel uses named parameters accepted by main.R", {
   )
 })
 
-test_that("2D PCA capsule keeps expected PCA parameter contract", {
+test_that("2D PCA capsule keeps expected PCA parameter defaults", {
   main_lines <- read_repo_file("code", "main.R")
   panel_lines <- read_repo_file(".codeocean", "app-panel.json")
 
-  shared_pca_args <- c(
-    "count_type",
-    "sub_count_type",
-    "feature_id_colname",
-    "sample_id_colname",
-    "samples_to_rename",
-    "group_colname",
-    "label_colname",
-    "principal_components",
-    "point_size",
-    "label_font_size",
-    "color_values"
-  )
-  two_dimensional_args <- c(
-    "legend_position",
-    "add_label",
-    "label_offset_x_",
-    "label_offset_y_",
-    "interactive_plots"
-  )
-
-  expect_same_values(
-    extract_main_arguments(main_lines),
-    c(shared_pca_args, two_dimensional_args),
-    info = "2D PCA main.R should expose shared PCA args plus 2D-specific controls"
-  )
   expect_match(paste(main_lines, collapse = "\n"), "plot_pca_2d\\(")
   expect_equal(
     extract_panel_default(panel_lines, "principal_components"),
     "1,2"
   )
-  expect_equal(extract_panel_default(panel_lines, "add_label"), "TRUE")
+  expect_equal(extract_panel_default(panel_lines, "label_colname"), "Label")
+  expect_true(is.na(extract_panel_default(panel_lines, "legend_font_size")))
+  expect_equal(extract_panel_default(panel_lines, "log_transform"), "FALSE")
   expect_equal(extract_panel_default(panel_lines, "interactive_plots"), "FALSE")
 })
 

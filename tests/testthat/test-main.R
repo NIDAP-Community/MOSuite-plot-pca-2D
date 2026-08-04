@@ -12,13 +12,16 @@ test_that("Code Ocean panel uses named parameters accepted by main.R", {
     main_args,
     info = "Every app-panel param_name should match a main.R CLI argument"
   )
+  expect_false("sub_count_type" %in% main_args)
+  expect_false("sub_count_type" %in% panel_args)
 })
 
 test_that("2D PCA capsule keeps expected PCA parameter defaults", {
   main_lines <- read_repo_file("code", "main.R")
   panel_lines <- read_repo_file(".codeocean", "app-panel.json")
+  main_text <- paste(main_lines, collapse = "\n")
 
-  expect_match(paste(main_lines, collapse = "\n"), "plot_pca_2d\\(")
+  expect_match(main_text, "plot_pca_2d\\(")
   expect_equal(
     extract_panel_default(panel_lines, "principal_components"),
     "1,2"
@@ -27,6 +30,12 @@ test_that("2D PCA capsule keeps expected PCA parameter defaults", {
   expect_true(is.na(extract_panel_default(panel_lines, "legend_font_size")))
   expect_equal(extract_panel_default(panel_lines, "log_transform"), "FALSE")
   expect_equal(extract_panel_default(panel_lines, "interactive_plots"), "FALSE")
+})
+
+test_that("main.R CLI plots supported count types", {
+  for (count_type in c("raw", "filt", "norm", "batch")) {
+    expect_main_runs_with_count_type(count_type)
+  }
 })
 
 test_that("run wrapper prepares result directories and forwards CLI arguments", {

@@ -70,15 +70,6 @@
 			"default_value": "Label"
 		},
 		{
-			"id": "sub_count_type_id",
-			"category": "7Rr6IxOMDucKMImp",
-			"name": "Sub count type",
-			"param_name": "sub_count_type",
-			"description": "Used when count_type refers to a list of count matrices.",
-			"type": "text",
-			"value_type": "string"
-		},
-		{
 			"id": "sample_id_colname_id",
 			"category": "EzTg1ivlFDHEy9PI",
 			"name": "Sample ID column name",

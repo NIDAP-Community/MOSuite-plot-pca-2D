@@ -33,8 +33,11 @@ test_that("2D PCA capsule keeps expected PCA parameter defaults", {
 })
 
 test_that("main.R CLI plots supported count types", {
+  setup <- setup_cli_workspace("mosuite_plot_pca_2d_count_types_test_")
+  on.exit(unlink(setup$workspace, recursive = TRUE), add = TRUE)
+
   for (count_type in c("raw", "filt", "norm", "batch")) {
-    expect_main_runs_with_count_type(count_type)
+    expect_main_runs_with_count_type(count_type, setup = setup)
   }
 })
 

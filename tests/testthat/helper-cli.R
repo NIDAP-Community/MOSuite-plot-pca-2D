@@ -29,7 +29,26 @@ setup_cli_workspace <- function(prefix = "mosuite_plot_pca_2d_test_") {
     file.exists(test_data_file),
     info = paste("Test data file should exist at", test_data_file)
   )
-  file.copy(test_data_file, file.path(data_dir, "moo.rds"), overwrite = TRUE)
+
+  moo <- readr::read_rds(test_data_file)
+  for (count_name in names(moo@counts)) {
+    count_obj <- moo@counts[[count_name]]
+    if (is.data.frame(count_obj)) {
+      if (nrow(count_obj) > 500L) {
+        moo@counts[[count_name]] <- count_obj[seq_len(500L), , drop = FALSE]
+      }
+    } else if (is.list(count_obj)) {
+      for (sub_count_name in names(count_obj)) {
+        sub_count_obj <- count_obj[[sub_count_name]]
+        if (is.data.frame(sub_count_obj) && nrow(sub_count_obj) > 500L) {
+          count_obj[[sub_count_name]] <-
+            sub_count_obj[seq_len(500L), , drop = FALSE]
+        }
+      }
+      moo@counts[[count_name]] <- count_obj
+    }
+  }
+  readr::write_rds(moo, file.path(data_dir, "moo.rds"))
 
   file.copy(
     file.path(repo_root, "code", "main.R"),
@@ -58,9 +77,15 @@ setup_cli_workspace <- function(prefix = "mosuite_plot_pca_2d_test_") {
   )
 }
 
-expect_main_runs_with_count_type <- function(count_type) {
-  setup <- setup_cli_workspace(paste0("mosuite_plot_pca_2d_", count_type, "_test_"))
-  on.exit(unlink(setup$workspace, recursive = TRUE), add = TRUE)
+expect_main_runs_with_count_type <- function(count_type, setup = NULL) {
+  if (is.null(setup)) {
+    setup <- setup_cli_workspace(paste0(
+      "mosuite_plot_pca_2d_",
+      count_type,
+      "_test_"
+    ))
+    on.exit(unlink(setup$workspace, recursive = TRUE), add = TRUE)
+  }
 
   old_wd <- getwd()
   setwd(setup$code_dir)
